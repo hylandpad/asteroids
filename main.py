@@ -41,10 +41,16 @@ def main():
                 return
        updatable.update(dt)
        for object in updatable:
-           if isinstance(object, Asteroid):
+            if isinstance(object, Asteroid):
                if object.collision(player) == True:
                    print('Game over!')
                    exit()
+       for asteroid in asteroids:
+            for bullet in shots:
+                if asteroid.collision(bullet):
+                    asteroid.split()
+                    bullet.kill()
+                    print("Asteroid destroyed!")
        screen.fill("black")
        for sprite in drawable:
            sprite.draw(screen)
