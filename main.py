@@ -37,8 +37,7 @@ def main():
                 return
        updatable.update(dt)
        for object in updatable:
-           if isinstance(object, Player):
-               print('non-player obj updating')
+           if isinstance(object, Asteroid):
                if object.collision(player) == True:
                    print('Game over!')
                    exit()
