@@ -55,7 +55,6 @@ def main():
        for sprite in drawable:
            sprite.draw(screen)
        pygame.display.flip()
-       clock.tick(60)
        dt = clock.tick(60) / 1000.0
 
 if __name__ == "__main__":
